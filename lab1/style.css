@@ -1,0 +1,25 @@
+li { list-style-type: square; }
+
+#cena { color: red; font-weight: bold; }
+
+.wstęp { font-style: italic; }
+
+img { border-style: solid; border-color: blue; width: 170; }
+
+img:hover { border-style: solid; border-color: red; }
+
+h1 + h2 { letter-spacing: 5px }
+
+[colspan="2"] { font-size: small }
+
+td + td { color: grey; }
+
+body { background-image: url(https://image.freepik.com/free-vector/abstract-blue-geometric-shapes-background_1035-17545.jpg); background-repeat: repeat-y }
+
+h1 {color: blue }
+
+h1 { color: green }
+
+.bold { text-style: bold }
+
+#pod { font-style: underline }
