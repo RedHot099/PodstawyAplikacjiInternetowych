@@ -28,6 +28,11 @@ p.hamburger {
 	display: none
 }
 
+nav { 
+	color: blue;
+	text-decoration: underline;
+}
+
 img {
 	width: 75px;
 }
