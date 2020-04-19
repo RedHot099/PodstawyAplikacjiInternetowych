@@ -14,7 +14,7 @@ class Osoba{
 }
 $osoba1 = new Osoba;
 $osoba1->login = "jan";
-$osoba1->haslo = "kowal123";
+$osoba1->haslo = "Kowal123";
 $osoba1->imieNazwisko = "Jan Kowalski";
 
 ?>
