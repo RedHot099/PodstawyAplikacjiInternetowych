@@ -1,0 +1,14 @@
+﻿@model IEnumerable<MVC.Models.Song>
+@Scripts.Render("~/bundles/jqueryval")
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@Html.Partial("_SongList", Model)
