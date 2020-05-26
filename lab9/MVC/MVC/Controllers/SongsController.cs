@@ -32,6 +32,7 @@ namespace MVC.Controllers
         // GET: Songs/Create
         public ActionResult Create()
         {
+            ViewBag.Genres = db.Genres.ToList();
             return View();
         }
 
@@ -42,11 +43,11 @@ namespace MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Artist,GenreId")] Song song)
         {
+            ViewBag.Genres = db.Genres.ToList();
             if (ModelState.IsValid)
             {
                 db.Songs.Add(song);
                 db.SaveChanges();
-                ViewBag.Genres = db.Genres.ToList();
                 return RedirectToAction("Index");
             }
 
@@ -56,6 +57,7 @@ namespace MVC.Controllers
         // GET: Songs/Edit/5
         public ActionResult Edit(int? id)
         {
+            ViewBag.Genres = db.Genres.ToList();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -75,6 +77,7 @@ namespace MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Artist,GenreId")] Song song)
         {
+            ViewBag.Genres = db.Genres.ToList();
             if (ModelState.IsValid)
             {
                 db.Entry(song).State = EntityState.Modified;
