@@ -18,6 +18,11 @@ namespace MVC
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Songs", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "DefaultGenres",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Genres", action = "Index", id = UrlParameter.Optional }
+            );
         }
     }
 }

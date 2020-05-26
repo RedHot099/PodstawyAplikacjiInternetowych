@@ -18,7 +18,14 @@ namespace MVC.Controllers
         // GET: Genres
         public ActionResult Index()
         {
-            return View(db.Genres.ToList());
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_GenresList", db.Genres.ToList());
+            }
+            else
+            {
+                return View(db.Genres.ToList());
+            }
         }
 
        
@@ -79,8 +86,8 @@ namespace MVC.Controllers
 
        
         // POST: Genres/Delete/5
-        [HttpMethod, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpDelete]
+        public ActionResult Delete(int id)
         {
             Genre genre = db.Genres.Find(id);
             db.Genres.Remove(genre);

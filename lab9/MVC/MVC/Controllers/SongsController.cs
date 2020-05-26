@@ -21,7 +21,7 @@ namespace MVC.Controllers
         {
             if (Request.IsAjaxRequest())
             {
-                return PartialView();
+                return PartialView("_SongList", db.Songs.ToList());
             }
             else
             {
@@ -89,7 +89,7 @@ namespace MVC.Controllers
 
 
         // POST: Songs/Delete/5
-        [HttpMethod, ActionName("Delete")]
+        [HttpDelete]
         public ActionResult Delete(int id)
         {
             Song song = db.Songs.Find(id);
