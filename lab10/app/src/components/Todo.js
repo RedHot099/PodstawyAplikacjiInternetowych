@@ -1,6 +1,8 @@
 import React from "react";
 
 function Todo({ todo, toggleComplete}) {
+	
+	
   function handleCheckboxClick() {
     toggleComplete(todo.id);
   }

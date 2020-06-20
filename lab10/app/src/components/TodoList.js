@@ -1,27 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Todo from "./Todo";
 
-function TodoList({ todos, toggleComplete }) {
+function TodoList({ todos, toggleComplete}) {
 	
-	let filtr = false 
+	
+	const [filter, setFilter] = useState(0)
 	
 	function handleCheckboxClick() {
-		toggleComplete(filtr);
+		setFilter(!filter)
 	}	
+	
+		todos = filter ? todos.filter(todos => !todos.completed) : todos
 		
-	
-	let todoes = filtr.completed ? todos.filter(todos => !todos.completed) : todos
-	
 	return (
 		<div>
 			<input 
 				type="checkbox"
 				name="filtr"
-				checked={filtr.completed}
+				checked={todos.f}
 				onChange={handleCheckboxClick}
 			/>Ukryj wykonane
 			<hr/>
-		  {todoes.map(todo => (
+		  {todos.map(todo => (
 			<Todo
 			  key={todo.id}
 			  todo={todo}
